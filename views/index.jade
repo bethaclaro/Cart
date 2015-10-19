@@ -1,5 +1,14 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    div
+        h1 Cart
+        p A simple shopping cart app using AngularJS
+
+    div(ui-view)
+
+    script(type='text/javascript', src='lib/angular/angular.js')
+    script(type='text/javascript', src='lib/angular-ui-router/release/angular-ui-router.js')
+    script(type='text/javascript', src='lib/angular-resource/angular-resource.js')
+    script(type='text/javascript', src='javascripts/app.js')
+    script(type='text/javascript', src='javascripts/service.js')
