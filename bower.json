@@ -1,0 +1,11 @@
+{
+  "name": "Shopper",
+  "description": "A shopping app sample app using AngularJS",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "~1.4.0",
+    "angular-ui-router": "^0.2.10",
+    "angular-resource": "^1.4.0",
+    "mongoose": "^4.1.0"
+  }
+}
