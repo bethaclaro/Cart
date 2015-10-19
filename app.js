@@ -12,6 +12,7 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+app.set('partials', path.join(__dirname, 'partials'));
 app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
@@ -24,6 +25,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
+app.get('/partials/:name', function (req, res)
+{ var name = req.params.name;
+  res.render('partials/' + name);
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,17 +1,18 @@
 extends layout
 
 block content
-    div
-        h1 Cart
-        p A simple shopping cart app using AngularJS
+    body(ng-app="Cart")
+        div
+            h1 Cart
+            p A simple shopping cart app using AngularJS
 
-    a(href="#login") Login
+        a(href="#login") Login
 
-    div(ui-view)
+        div(ui-view)
 
-    script(src='bower_components/angular/angular.js')
-    script(src='bower_components/angular-ui-router/release/angular-ui-router.js')
-    script(src='bower_components/angular-resource/angular-resource.js')
-    Script(src='bower_components/mongoose/bin/mongoose.js')
-    script(src='javascripts/app.js')
-    script(src='javascripts/service.js')
+        script(src='bower_components/angular/angular.js')
+        script(src='bower_components/angular-ui-router/release/angular-ui-router.js')
+        script(src='bower_components/angular-resource/angular-resource.js')
+        Script(src='bower_components/mongoose/bin/mongoose.js')
+        script(src='javascripts/app.js')
+        script(src='javascripts/service.js')

@@ -17,22 +17,22 @@ cartApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider
         })
         .state('loginState', {
             url: "/login",
-            templateUrl: "partials/login.jade",
+            templateUrl: "partials/login",
             controller: "LoginController"
         })
         .state('storeState', {
             url: "/store",
-            templateUrl: "views/partials/store.jade",
+            templateUrl: "partials/store",
             controller: "StoreController"
         })
         .state('cartState', {
             url: "/cart",
-            templateUrl: "partials/shoppingcart.jade",
+            templateUrl: "partials/shoppingcart",
             controller: "CartController"
         })
         .state('checkoutState', {
             url: '/checkout',
-            templateUrl: "views/partials/checkout.jade",
+            templateUrl: "partials/checkout",
             controller: ""
         });
 }]);
