@@ -1,5 +1,5 @@
 {
-  "name": "Shopper",
+  "name": "Cart",
   "description": "A shopping app sample app using AngularJS",
   "version": "0.0.1",
   "dependencies": {
