@@ -42,16 +42,16 @@ cartApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider
 //LOGIN
 cartApp.controller('LoginController', ['$scope', '$location', 'Login'
     , function ($scope, $location, Login) {
-    $scope.loginUser = function (username, password) {
-        var servData = Login.getData();
-        servData.$promise.then( function (data) {
-            if(data.user == username && data.password==password)
-                $location.path('/store');
-            else
-                alert("Sorry");
-        });
-    };
-}]);
+        $scope.loginUser = function (username, password) {
+            var servData = Login.getData();
+            servData.$promise.then( function (data) {
+                if(data.user == username && data.password==password)
+                    $location.path('/store');
+                else
+                    alert("Sorry");
+            });
+        };
+    }]);
 
 
 

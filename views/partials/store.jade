@@ -3,6 +3,7 @@
 
 div(ng-controller="StoreController")
    input(type="text" placeholder="Search for a book" ng-model="query")
+   input(type="button" value="Clear")
    table
       thead
          tr
@@ -10,9 +11,13 @@ div(ng-controller="StoreController")
             td Title
             td Author
             td Price
+            td
+               a(ui-sref="cartState" title="Click to view cart.") {{total | currency:'$'}}
       tbody
          tr(ng-repeat="book in books | filter:query")
             td {{book.id}}
             td {{book.title}}
             td {{book.author}}
             td {{book.price}}
+            td
+               input(type="button", value="Add to Cart" ng-click="addToCart(book.price)")
