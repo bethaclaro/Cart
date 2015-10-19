@@ -2,13 +2,13 @@
  * Created by Beth Aclaro on 10/7/15.
  */
 
-var shopperApp = angular.module("Shopper", ['ui.router', 'bookshopService']);
+var cartApp = angular.module("Cart", ['ui.router', 'bookshopService']);
 
-shopperApp.run(['$rootScope', function($rootScope) {
+cartApp.run(['$rootScope', function($rootScope) {
     $rootScope.appTitle = "Dot";
 }]);
 
-shopperApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+cartApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/");
 
     $stateProvider
@@ -17,22 +17,22 @@ shopperApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvi
         })
         .state('loginState', {
             url: "/login",
-            templateUrl: "./partialviews/login.html",
+            templateUrl: "partials/login.jade",
             controller: "LoginController"
         })
         .state('storeState', {
             url: "/store",
-            templateUrl: "./partialviews/store.html",
+            templateUrl: "views/partials/store.jade",
             controller: "StoreController"
         })
         .state('cartState', {
             url: "/cart",
-            templateUrl: "./partialviews/shoppingcart.html",
+            templateUrl: "partials/shoppingcart.jade",
             controller: "CartController"
         })
         .state('checkoutState', {
             url: '/checkout',
-            templateUrl: "./partialviews/checkout.html",
+            templateUrl: "views/partials/checkout.jade",
             controller: ""
         });
 }]);
@@ -40,7 +40,7 @@ shopperApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvi
 
 
 //LOGIN
-shopperApp.controller('LoginController', ['$scope', '$location', 'Login'
+cartApp.controller('LoginController', ['$scope', '$location', 'Login'
     , function ($scope, $location, Login) {
     $scope.loginUser = function (username, password) {
         var servData = Login.getData();
@@ -56,7 +56,7 @@ shopperApp.controller('LoginController', ['$scope', '$location', 'Login'
 
 
 //STORE
-shopperApp.controller("StoreController", ['$scope', 'GetBooks', function ($scope, GetBooks) {
+cartApp.controller("StoreController", ['$scope', 'GetBooks', function ($scope, GetBooks) {
     $scope.total = parseInt(0);
     var servData = GetBooks.getData();
     servData.$promise.then( function (data) {
@@ -70,6 +70,6 @@ shopperApp.controller("StoreController", ['$scope', 'GetBooks', function ($scope
 
 
 //CART
-shopperApp.controller("CartController", ['$scope', function($scope) {
+cartApp.controller("CartController", ['$scope', function($scope) {
 
 }]);
